@@ -77,6 +77,8 @@ int MplusN(int(&city)[Row][Col])
 
 }
 
+//La implementación del punto a tardará más tiempo que el del punto b debido a que este presenta una menor eficiencia al ser de tipo logaritmica.
+
 int main()
 {
     int ansA, ansB;
