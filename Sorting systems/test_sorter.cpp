@@ -32,7 +32,7 @@ int main()
 {
     //generate a random float number array 
     vector<int> arr_f;
-    int count = 10;
+    int count = 100000;
 
     for (size_t i = 0; i < count; i++)
     {
@@ -44,14 +44,13 @@ int main()
     vector<int> arr_3(arr_f);
     vector<int> arr_4(arr_f);
 
-    cout << "Unsorted: " << endl;
-    print_vector(arr_f, 10);
-
     DECLARE_TIMING(t);
     START_TIMING(t);
     std::sort(arr_f.begin(), arr_f.end());
     STOP_TIMING(t);
     SHOW_TIMING(t, "std::sort");
+    
+    cout << "\n";
 
     //Create SelectionSort instance
     DECLARE_TIMING(t1);
@@ -61,6 +60,8 @@ int main()
     STOP_TIMING(t1);
     compare_vectors(arr_f, arr_1, "Selection sort");
     SHOW_TIMING(t1, "Selection Sort: ");
+    
+    cout << "\n";
 
     DECLARE_TIMING(t2);
     START_TIMING(t2);
@@ -69,6 +70,8 @@ int main()
     STOP_TIMING(t2);
     compare_vectors(arr_f, arr_2, "Bubble Sort");
     SHOW_TIMING(t2, "Bubble Sort: ");
+    
+    cout << "\n";
 
     DECLARE_TIMING(t3);
     START_TIMING(t3);
@@ -77,6 +80,8 @@ int main()
     STOP_TIMING(t3);
     compare_vectors(arr_f, arr_3, "Insertion sort");
     SHOW_TIMING(t3, "Insertion Sort: ");
+    
+    cout << "\n";
 
     DECLARE_TIMING(t4);
     START_TIMING(t4);
