@@ -6,6 +6,11 @@
 
 using namespace std;
 
+bool compare(string a, vector<T> arr)
+{
+  if
+}
+
 int main()
 {
   ifstream bitacora_txt("equipo12.txt");
@@ -62,4 +67,13 @@ int main()
     Entry prueba(date, hour, sIp, sPort, hostF, dIp, dPort, hostD);
     trial.push_back(prueba);
   }
+
+  Entry helper;
+  Entry data;
+
+  string seconddate = data.getSecondDate();
+  string names = data.getPcName();
+
+  cout << "There are " << trial.size() << " data." << endl;
+  helper.seqSearch(names, trial, (names, trial));
 }
