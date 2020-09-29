@@ -11,38 +11,22 @@ using namespace std;
 
 class Entry
 {
-    protected:
-        string date, hour, sIp, sPort, hostF, dIp, dPort, hostD;
-        int dateNum;
-
     public:
-        Entry() {};
-        ~Entry() {};
+        string date, hour, sIp, sPort, hostF, dIp, dPort, hostD;
 
-        Entry(string date, string hour, string sIp, string sPort, string hostF, string dIp, string dPort, string hostD)
+        Entry() = default;
+
+        Entry(string daten, string hourn, string sIpn, int sPortn, string hostFn, string dIpn, int dPortn, string hostDn)
         {
-            this -> date = date;
-            this -> hour = hour;
-            this -> sIp = sIp;
-            this -> sPort = sPort;
-            this -> hostF = hostF;
-            this -> dIp = dIp;
-            this -> dPort = dPort;
-            this -> hostD = hostD;
+            this -> date = daten;
+            this -> hour = hourn;
+            this -> sIp = sIpn;
+            this -> sPort = sPortn;
+            this -> hostF = hostFn;
+            this -> dIp = dIpn;
+            this -> dPort = dPortn;
+            this -> hostD = hostDn;
         }    
-
-        string getHostName(Entry &a)
-        {
-            if (a.dIp == "192.168.173.178")
-            {
-                return a.hostD;
-            }
-            else
-            {
-                return "Not found";
-            }
-            
-        } 
 };
 
 template <typename T>
@@ -140,14 +124,9 @@ class Search : Entry
             return a.hostF == name;
         }
 
-        bool compDip(Entry &a, string ip)
-        {
-            return a.dIp = ip;
-        }
-
         bool compSip(Entry &a, string starter)
         {
-            string m = intUrl(a.sIp)
+            string m = intUrl(a.sIp);
             return m == starter;
         }
     
@@ -173,7 +152,7 @@ class Search : Entry
             string idfk;
             for (size_t i = 0; i < arr.size(); i++)
             {
-                bool rito = compName(arr[i], a)
+                bool rito = compName(arr[i], a);
                 if (rito == true)
                 {
                     idfk = "Found";
@@ -183,20 +162,6 @@ class Search : Entry
             }
             idfk = "Not found";
             return idfk; 
-        }
-
-        void dipSeqSearch(vector<T> arr, string a)
-        {
-            int counter;
-            for (size_t i = 0; i < arr.size(); i++)
-            {
-                bool rito = compDip(arr[i], a);
-                if (rito == true)
-                {
-                    counter ++;
-                }
-            }
-            cout << "How many destiny ip are: " << counter << endl;
         }
 
         void sipSeqSearch(vector<T> arr, string a)
