@@ -1,5 +1,5 @@
-#ifndef _CONEXION_COMPU_H
-#define _CONEXION_COMPU_H
+#ifndef _CONEXION_COMPU_H_
+#define _CONEXION_COMPU_H_
 
 #include <stddef.h>
 #include <queue>
