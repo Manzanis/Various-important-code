@@ -26,6 +26,16 @@ class ConnectPc
             ConexionesSalientes = throwConect;
         }
 
+        stack<string> getStack()
+        {
+            return ConexionesEntrantes;
+        }
+
+        queue<string> getQueue()
+        {
+            return ConexionesSalientes;
+        }
+
         void print()
         {
             cout << "The user's IP is: " << Ip << endl;
