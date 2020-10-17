@@ -2,9 +2,6 @@
 #define _ENTRY_H_
 
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
 
 using namespace std;
 
@@ -33,9 +30,25 @@ class Entry
             return date;
         }
 
+        string getStartip()
+        {
+            return sIp;
+        }
+
         string getStartport()
         {
             return sPort;
+        }
+
+
+        string getDestip()
+        {
+            return dIp;
+        }
+
+        string getDestport()
+        {
+            return dPort;
         }
 };
 
