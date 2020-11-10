@@ -26,6 +26,11 @@ class ConnectPc
             ConexionesSalientes = throwConect;
         }
 
+        string getIp()
+        {
+            return Ip;
+        }
+
         stack<string> getStack()
         {
             return ConexionesEntrantes;
@@ -36,12 +41,12 @@ class ConnectPc
             return ConexionesSalientes;
         }
 
-        void print()
+        /*void print()
         {
             cout << "The user's IP is: " << Ip << endl;
             cout << "\nThe user's hostname is: " << Nombre << endl;
             cout << endl;
-        }
+        }*/
 };
 
 
