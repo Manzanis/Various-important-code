@@ -27,6 +27,10 @@ class GraphVertex
 
         vector<int> get_adj() {return adj;}
         void add_to_adj(int idx) {adj.push_back(idx);}
+        friend bool operator == (GraphVertex<T> a, GraphVertex<T> b)
+        {
+            return a.get_val()==b.get_val();
+        }
 };
 
 template <class T>
@@ -53,6 +57,32 @@ class Graph
             {
                 nodes[dst].add_to_adj(src);
             }
+        }
+
+        void add_edges(T src, T dst)
+        {
+            GraphVertex<T> src_vertex(src);
+            GraphVertex<T> dst_vertex(dst);
+            auto s=find(nodes.begin(), nodes.end(), src_vertex);
+            auto d=find(nodes.begin(), nodes.end(), dst_vertex);
+            if(s != nodes.end() && d != nodes.end())
+            {
+                int src_index=s-nodes.begin();
+                int dst_index=d-nodes.begin();
+                add_edges(src_index, dst_index);
+            }
+        }
+
+        int vecinos(T v)
+        {
+            GraphVertex<T> v_vertex(v);
+            auto s=find(nodes.begin(), nodes.end(), v_vertex);
+            if(s != nodes.end())
+            {
+                int index=s-nodes.begin();
+                return nodes[index].get_adj().size();
+            }
+            return 0;
         }
 
         void BFS(int start_vertex)

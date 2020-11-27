@@ -8,10 +8,9 @@ using namespace std;
 
 class Entry
 {
-    private:
-        string date, hour, sIp, sPort, hostF, dIp, dPort, hostD;
-    
     public:
+        string date, hour, sIp, sPort, hostF, dIp, dPort, hostD;
+
         Entry() = default;
 
         Entry(string daten, string hourn, string sIpn, string sPortn, string hostFn, string dIpn, string dPortn, string hostDn)
